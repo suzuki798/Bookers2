@@ -28,7 +28,7 @@ class BooksController < ApplicationController
    private
 
   def post_image_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body,:image)
   end
 
 end
