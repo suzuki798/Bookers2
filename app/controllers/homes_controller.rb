@@ -3,5 +3,9 @@ class HomesController < ApplicationController
        top
   end
 
+  def
+      abut
+  end
+
 
 end

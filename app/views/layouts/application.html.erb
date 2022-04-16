@@ -40,7 +40,17 @@
       <li>
         <%= link_to "Bookers", root_path %>
       </li>
+      <li>
+        <%= link_to "Abut", abut_path %>
+      </li>
     <% end %>
-    <%= yield %>
+    <div class="container content">
+  <%= yield %>
+</div>
+<div class="footer">
+   <div class="container">
+     CopyRight Infratop.inc
+   </div>
+</div>
   </body>
 </html>
