@@ -1,17 +1,27 @@
-<h1>User,index</h1>
 
 
+<div class="container">
+  <div Class="row">
 
+<div class="col-md-3">
 
+ <%= render 'books/list', book: @book, user: @user %>
 
->
+ </div>
 
+ <div class="col-md-8">
 
-<h1>users</h1>
-
+<table class="table table-striped">
+<h1>Users</h1>
 <% @users.each do |user| %>
-  <p>タイトル</p>
-
- <p>画像</p>
-  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
+   <tr>
+      <th>タイトル</th>
+      <th>画像</th>
+       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg' %>
 <% end %>
+
+    </tr>
+  </div>
+
+  </div>
+</div>

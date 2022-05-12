@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+    <head>
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
-     <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+ <body>
+
+  <header class="bg-dark text-white pt-2 pb-2">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+
+       <%= link_to "Bookers", root_path, class: "navbar-brand" %>
+
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+
+        <% if user_signed_in? %>
+
+      <li class="nav-item">
+        <%= link_to "HOME", users_path, class: "nav-link text-light fas fa-home" %>
+      </li
+      <li class="nav-item">
+        <%= link_to "User", users_path, class: "nav-link text-light fas fa-users" %>
       </li>
-       <li>
-        <%= link_to "HOME", users_path %>
+      <li class="nav-item">
+        <%= link_to "Books", books_path, class: "nav-link text-light fas fa-book-open" %>
       </li>
-      <li>
-        <%= link_to "User", users_path(current_user.id)  %>
-      </li>
-      <li>
-        <%= link_to "Books", books_path %>
-      </li>
-      <li>
-        <%= link_to "Bookers", root_path %>
+      <li class="nav-item">
+        <%= link_to  "ログアウト", destroy_user_session_path, class: "nav-link text-light fas fa-sign-out-alt" ,method: :delete %>
       </li>
 
+
+
+
     <% else %>
-      <li>
+      <li class="nav-item">
         <%= link_to "新規登録", new_user_registration_path %>
       </li>
-      <li>
+      <li class="nav-item">
         <%= link_to "ログイン", new_user_session_path %>
       </li>
-      <li>
+      <li class="nav-item">
         <%= link_to "HOME", root_path %>
       </li>
-      <li>
+      <li class="nav-item">
         <%= link_to "Bookers", root_path %>
       </li>
-      <li>
+      <li class="nav-item">
         <%= link_to "Abut", abut_path %>
       </li>
-    <% end %>
-    <div class="container content">
-  <%= yield %>
-</div>
-<div class="footer">
-   <div class="container">
+
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+ <main>
+
+    <%= yield %>
+</main>
+<footer>
      CopyRight Infratop.inc
-   </div>
-</div>
+</footer>
+
   </body>
+
+
+
 </html>

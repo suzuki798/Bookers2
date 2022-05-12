@@ -1,7 +1,7 @@
-<% @post_images.each do |post_image| %>
+<% @users.each do |post_image| %>
 <div>
-  <%= link_to post_image_path(post_image.id) do %>
-    <%= attachment_image_tag post_image, :image %>
+  <%= link_to user_path(user.id) do %>
+    <%= attachment_image_tag user, :profile_image %>
   <% end %>
   <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
 
@@ -9,4 +9,4 @@
   <p>ユーザーネーム：<%= post_image.user.name %></p>
 </div>
 <% end %>
-<%= paginate @post_images %>
+<%= paginate @users %>
